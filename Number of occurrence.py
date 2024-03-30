@@ -21,11 +21,11 @@ class Solution:
                     high = mid - 1
                 else:
                     low = mid + 1
-            return ub-1 #important 
+            return ub 
         def count(self,arr, n, x):
             # code here
             lb = self.lowerBound(arr, n, x)
             if lb == n or arr[lb] != x:
                 return 0
-            ub = self.upperBound(arr, n, x)
+            ub = self.upperBound(arr, n, x)-1 #important 
             return ub - lb + 1
