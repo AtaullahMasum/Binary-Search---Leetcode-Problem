@@ -21,7 +21,7 @@ class Solution:
                     high = mid - 1
                 else:
                     low = mid + 1
-            return ub-1
+            return ub-1 #important 
         def count(self,arr, n, x):
             # code here
             lb = self.lowerBound(arr, n, x)
