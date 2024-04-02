@@ -19,6 +19,9 @@ class Solution:
             sum += (nums[i]+d-1)//d #always take ceil value
         return sum
     def smallestDivisor(self, nums: List[int], threshold: int) -> int:
+        # if minimum sum of divisor greater than threshold then return -1
+        if len(nums) > threshold:
+            return -1
         low, high =1,  max(nums)
         ans = -1
         while low <= high:
