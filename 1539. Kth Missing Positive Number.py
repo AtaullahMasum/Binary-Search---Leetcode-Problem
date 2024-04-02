@@ -9,7 +9,7 @@ class Solution:
                 break
         return k
 #Optimal Solution Added
-# Time Complexity is O(logn)
+# Time Complexity is O(n)
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
         low , high = 0, len(arr)-1
