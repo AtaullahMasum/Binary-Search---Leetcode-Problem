@@ -23,8 +23,7 @@ class Solution:
                 return pages
 #Optimal Solution Using Binary Search
 class Solution:
-    
-    #Function to find minimum number of pages.
+    # claculate number of students allocation  these book
     def calculateStudent(self, A, pages):
         stu , pagesStudent = 1, 0
         for i in range(len(A)):
@@ -34,6 +33,7 @@ class Solution:
                 stu += 1
                 pagesStudent = A[i]
         return stu
+    #Function to find minimum number of pages.
     def findPages(self,A, N, M):
         #code here
         if M > N:
