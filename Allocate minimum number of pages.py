@@ -22,4 +22,28 @@ class Solution:
             if cntStu == M:
                 return pages
 #Optimal Solution Using Binary Search
+class Solution:
+    
+    #Function to find minimum number of pages.
+    def calculateStudent(self, A, pages):
+        stu , pagesStudent = 1, 0
+        for i in range(len(A)):
+            if pagesStudent + A[i] <= pages:
+                pagesStudent += A[i]
+            else:
+                stu += 1
+                pagesStudent = A[i]
+        return stu
+    def findPages(self,A, N, M):
+        #code here
+        if M > N:
+            return -1
+        low , high = max(A), sum(A)
+        while low <= high:
+            mid = (low+high)//2
+            if self.calculateStudent(A, mid) > M:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return low
 
