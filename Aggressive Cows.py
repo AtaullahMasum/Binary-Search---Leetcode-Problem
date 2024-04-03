@@ -28,10 +28,9 @@ class Solution:
             if stalls[i] - last >= dist:
                 cntCows += 1
                 last = stalls[i]
-        if cntCows >= k:
-            return True
-        else:
-            return False
+            if cntCows >= k:
+                return True
+        return False
     
     def solve(self,n,k,stalls):
         stalls.sort()
