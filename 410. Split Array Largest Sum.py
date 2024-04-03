@@ -1,5 +1,6 @@
 # the Problem is same as Book Allocation
 # Painter Partition Problem Also same these problem
+# Page Allocation Problem solution reuses  so the function name is findPages and CalculatedStudent
 class Solution:
     def calculateStudent(self, A, pages):
         stu , pagesStudent = 1, 0
