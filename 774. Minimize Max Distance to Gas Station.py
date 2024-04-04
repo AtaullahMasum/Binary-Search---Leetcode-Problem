@@ -42,3 +42,23 @@ class Solution:
         maxAns, index = heapq.heappop(heap)
         maxAns = -float(maxAns)
         return maxAns
+#Using Binary Search
+import math
+class Solution:
+    def numberOfGasStationRequired(self, stations, dist):
+        count = 0
+        for i in range(len(stations)-1):  # Start from index 1
+            count += math.floor((stations[i+1] - stations[i])/dist)
+        return count
+            
+    def findSmallestMaxDist(self, stations, K):
+        low , high = 0, 0
+        for i in range(len(stations)-1):
+            high = max(high, stations[i+1]-stations[i])
+        while high - low > 1e-6:
+            mid = (low+high)/2.0
+            if self.numberOfGasStationRequired(stations, mid)>K:
+                low = mid
+            else:
+                high = mid
+        return high
