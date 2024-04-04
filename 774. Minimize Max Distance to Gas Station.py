@@ -47,7 +47,7 @@ import math
 class Solution:
     def numberOfGasStationRequired(self, stations, dist):
         count = 0
-        for i in range(len(stations)-1):  # Start from index 1
+        for i in range(len(stations)-1):  
             count += math.floor((stations[i+1] - stations[i])/dist)
         return count
             
