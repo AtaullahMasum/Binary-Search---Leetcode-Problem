@@ -19,6 +19,8 @@ class Solution:
             maxAns = max(maxAns, sectionLength)
         return maxAns
 #Using Maxheap
+#Time Complexity is O(nlong + klogn)
+#Space Complexity is O(n-1)
 import heapq
 from decimal import Decimal
 class Solution:
@@ -34,7 +36,7 @@ class Solution:
             diff, index = heapq.heappop(heap)
             howmany[index] += 1
             iniDiff = stations[index+1] - stations[index]
-            sectionLength = iniDiff/(howmany[index]+1)
+            sectionLength = iniDiff/(howmany[index]+1)*1.0
             heapq.heappush(heap, (-Decimal(sectionLength), index))
             
         maxAns, index = heapq.heappop(heap)
