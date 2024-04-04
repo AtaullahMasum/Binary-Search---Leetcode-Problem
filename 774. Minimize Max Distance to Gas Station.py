@@ -18,3 +18,25 @@ class Solution:
             sectionLength = (stations[i+1] - stations[i])/(howmany[i]+1)
             maxAns = max(maxAns, sectionLength)
         return maxAns
+#Using Maxheap
+import heapq
+from decimal import Decimal
+class Solution:
+    def findSmallestMaxDist(self, stations, K):
+        n = len(stations)
+        howmany = [0]*(n-1)
+        heap = []
+        for i in range(len(howmany)):
+            diff = stations[i+1] - stations[i]
+            heapq.heappush(heap, (-diff, i))
+            
+        for gasStation in range(1, K+1):
+            diff, index = heapq.heappop(heap)
+            howmany[index] += 1
+            iniDiff = stations[index+1] - stations[index]
+            sectionLength = iniDiff/(howmany[index]+1)
+            heapq.heappush(heap, (-Decimal(sectionLength), index))
+            
+        maxAns, index = heapq.heappop(heap)
+        maxAns = -float(maxAns)
+        return maxAns
