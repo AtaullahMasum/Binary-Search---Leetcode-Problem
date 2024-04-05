@@ -1,5 +1,5 @@
 # Using Binary Search
-# Time Complexity is O()
+# Time Complexity is O(n*logm) where n is the number of row and m is the number of column
 class Solution:
     def findMaxIndex(self,mat, n, col):
         index = -1
